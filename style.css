@@ -1,0 +1,145 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+
+body{
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(45deg,rgb(200, 40, 200),rgb(218, 217, 212));
+}
+
+
+.navigation{
+    width:120px;
+    height: 60px;
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 20px;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    transition:width 0.5s , height 0.5s;
+    transition-delay:0.75s , 0s;
+    overflow: hidden;
+}
+.active{
+    width: 300px;
+    height: 400px;
+    transition:width 0.5s , height 0.5s;
+    transition-delay:0s , 0.75s;
+}
+
+.userBox{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.active .userBox {
+    width: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+}
+
+.imgBox{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    overflow: hidden;
+}
+
+
+.imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menuToggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menuToggle::before{
+    content: ' ';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background-color: #111;
+    transform: translateY(-10px);
+    box-shadow: 0  10px #111;
+    transition: 0.5s;
+}
+
+.menuToggle::after{
+    content: ' ';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background-color: #111;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.active .menuToggle::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #111;
+}
+
+.active .menuToggle::after{
+    transform: translateY(0px) rotate(-45deg);
+    
+}
+
+.links{
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    position: absolute;
+    padding: 20px;
+}
+
+.links .link{
+    width: 100%;
+    height: 40px;
+}
+
+.links .link a{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    transition:transform  0.5s ease;
+}
+
+.links .link a :where(ion-icon , span){
+    font-size: 20px;
+    color: #666;
+    font-weight: 400;
+}
+
+.links .link a ion-icon{
+    padding-right: 20px;
+}
+
+.links .link a:hover :where(ion-icon , span){
+    color:blue;
+}
+
+.links .link a:hover{
+    transform: translateX(10px);
+}
